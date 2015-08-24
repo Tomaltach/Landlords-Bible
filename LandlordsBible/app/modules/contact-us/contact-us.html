@@ -1,0 +1,53 @@
+﻿<div class="row contact-us">
+    <form class="small-10 columns" name="contactUsForm" ng-submit="onSubmitClick()" novalidate>
+        <div class="row">
+            <div class="medium-6 small-12 columns end">
+                <ng-input-text model="contactFormData" property-name="name" label="Name" focus-on="contactUs" />
+            </div>
+
+            <div class="medium-6 small-12 columns end">
+                <ng-input-text model="contactFormData" property-name="email" label="Email" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-6 small-12 columns end">
+                <ng-input-text model="contactFormData" property-name="phoneNumber" label="Phone Number" />
+            </div>
+
+            <div class="medium-6 small-12 columns end">
+                <label>
+                    Country
+                    <select model="contactFormData" property-name="country" class="custom-select" value="">
+                        <option ng-repeat="country in countries" value='{{country.value}}'>{{country.country}}</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="medium-6 small-12 columns end">
+                <ng-input-text model="contactFormData" property-name="typeOfService" label="Type of Service" />
+            </div>
+
+            <div class="medium-6 small-12 columns end">
+                <ng-input-text model="contactFormData" property-name="department" label="Department" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns end">
+                <ng-input-textarea model="contactFormData" property-name="message" label="Message" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns end">
+                <button class="tiny" type="submit">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>Submit</span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
