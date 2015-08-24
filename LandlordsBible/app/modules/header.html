@@ -1,0 +1,91 @@
+﻿<div class="row info-bar">
+    <div class="small-12 columns">
+        <span>
+            <i class="fa fa-mobile lime"></i>
+            Call us Today! 086 600 3450
+        </span>
+        <span>
+            <i class="fa fa-envelope lime"></i>
+            <a href="mailto:reserveit64@hotmail.com">reserveit64@hotmail.com</a>
+        </span>
+    </div>
+</div>
+
+<div class="row navigation-bar">
+    <div class="medium-2 small-12 columns site-logo">
+        <a ui-sref="root.standard.home"><img src="/resources/images/logo.png" alt="Landlords-Bible" /></a><br />
+    </div>
+
+    <div class="medium-10 small-12 columns main-navigation">
+        <nav class="top-bar" ng-if="isUserLoaded" data-topbar>
+            <section class="top-bar-section">
+                <ul class="left">
+                    <li>
+                        <a ui-sref="root.standard.home">
+                            <i class="fa fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{sensorsDashboardUri}}" ng-if="sensorsDashboardUri">
+                            <i class="fa fa-table"></i>
+                            <span>Sensors</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="right">
+                    <li class="has-dropdown" ng-if="manageRoutes.length > 0">
+                        <a href="javascript: void(0)">
+                            <i class="fa fa-cog"></i>
+                            <span>Admin</span>
+                        </a>
+                        <ul class="dropdown">
+                            <li ng-repeat="route in manageRoutes">
+                                <a href="{{route.uri}}">
+                                    <i class="fa" ng-class="route.cssClass"></i>
+                                    <span>{{route.name}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="javascript: void(0)">
+                            <i class="fa fa-user"></i>
+                            <span>{{userName}}</span>
+                        </a>
+                        <ul class="dropdown">
+                            <li>
+                                <a href="{{manageOwnAccountUri()}}">
+                                    <i class="fa fa-wrench"></i>
+                                    <span>Account</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0)" ng-click="logout()">
+                                    <i class="fa fa-sign-out"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>
+
+<div class="row page-bar">
+    <div class="small-2 columns">
+        <h2>{{currentPage.headerTitle || '&nbsp;'}}</h2>
+    </div>
+    <div class="small-10 columns" ui-view="sub-navigation"></div>
+</div>
+
+<div class="row argus-divider">
+    <span class="small-3 columns divider-segment">&nbsp;</span>
+    <span class="small-3 columns divider-segment">&nbsp;</span>
+    <span class="small-3 columns divider-segment">&nbsp;</span>
+    <span class="small-3 columns divider-segment">&nbsp;</span>
+</div>

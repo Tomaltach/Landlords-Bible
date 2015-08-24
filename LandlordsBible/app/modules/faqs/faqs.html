@@ -1,0 +1,11 @@
+﻿<ul class="accordion" data-accordion>
+    <li ng-repeat="faq in faqs" class="accordion-navigation">
+        <div class="accordion-title noselect" ng-click="onFaqTitleClick(faq.title, icon)">
+            <i class="fa" ng-class="getIconClass(faq)"></i>
+            <span>{{faq.title}}</span>
+        </div>
+        <div class="content" ng-class="{ active: accordion.current == faq.title }">
+            {{faq.content}}
+        </div>
+    </li>
+</ul>

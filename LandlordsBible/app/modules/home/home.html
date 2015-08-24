@@ -1,0 +1,36 @@
+﻿<!-- home-->
+<div class="row home">
+    <div class="small-12 columns no-horizontal-padding">
+        <ul data-orbit>
+            <li>
+                <img src="/Resources/images/orbit-demo-1.jpg" alt="orbit demo 1" />
+                <div class="orbit-caption">
+                    Slide Sample
+                </div>
+            </li>
+            <li class="active">
+                <img src="/Resources/images/orbit-demo-2.jpg" alt="orbit demo 2" />
+                <div class="orbit-caption">
+                    Novaerus Slide Sample
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="small-12 columns">
+        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4 home-tiles">
+            <li ng-repeat="tile in tiles">
+                <div class="shadowed-box">
+                    <a href="{{tile.url}}" class="row">
+                        <div class="large-3 medium-12 small-12 columns centered-content">
+                            <i class="tile-icon" ng-class="tile.cssClass"></i>
+                        </div>
+                        <div class="large-9 medium-12 small-12 columns title-holder">
+                            <span class="tile-caption">{{tile.name}}</span>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
